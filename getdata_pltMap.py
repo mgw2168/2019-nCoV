@@ -36,8 +36,7 @@ def get_daily_cn():
         cn_deathNum_list.append(int(item.get('cn_deathNum', 0)))
         cn_cureNum_list.append(int(item.get('cn_cureNum', 0)))
         cn_susNum_list.append(item.get('cn_susNum', 0))
-    
-    # 因为新浪网数据有null值，这里操作有点多
+
     cn_susNum_list = [x for x in cn_susNum_list if x is not None]
     for i in range(len(cn_conNum_list) - len(cn_susNum_list)):
         cn_susNum_list.append(1)
